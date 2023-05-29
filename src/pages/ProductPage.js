@@ -6,7 +6,12 @@ const ProductPage = () => {
     useEffect(() => {
         const btns = document.querySelectorAll(".btn-remove");
         for (let btn of btns) {
-            console.log(btn);
+            const id = btn.dataset.id;
+            btn.addEventListener("click", function () {
+                const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
+                if (!confirm) return;
+                setProducts(products.filter((product) => product.id !== +id));
+            });
         }
     });
     return `
@@ -31,7 +36,9 @@ const ProductPage = () => {
                                 <td>${product.name}</td>
                                 <td>${product.content}</td>
                                 <td>
-                                    <button class="btn btn-remove">Remove</button>
+                                    <button class="btn btn-remove" data-id="${
+                                        product.id
+                                    }">Remove</button>
                                 </td>
                             </tr>
                     `
