@@ -3,9 +3,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProductPage from "./pages/ProductPage";
 import ProductDetail from "./pages/ProductDetail";
-import { render } from "./lib";
+import { render, router } from "./lib";
 
-const router = new Navigo("/", { linksSelector: "a" });
 const app = document.querySelector("#app");
 
 router.on("/", () => render(HomePage, app));
