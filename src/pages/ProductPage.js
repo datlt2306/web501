@@ -30,6 +30,7 @@ const ProductPage = () => {
         <div class="container max-w-4xl mx-auto px-4">
             ${Header()}
             <h1>Product Page</h1>
+            <a href="product/add">Thêm</a>
             <table>
                 <thead>
                     <tr>
@@ -50,6 +51,7 @@ const ProductPage = () => {
                                 <td>${product.price}</td>
                                 <td>${product.description}</td>
                                 <td>
+                                    <a href="/product/${product.id}/edit">Edit</a>
                                     <button class="btn btn-remove" data-id="${
                                         product.id
                                     }">Remove</button>

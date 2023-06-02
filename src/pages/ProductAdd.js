@@ -22,7 +22,7 @@ const ProductAddPage = () => {
                 },
                 body: JSON.stringify(product),
             }).then(() => {
-                console.log("Bạn đã thêm sản phẩm thành công");
+                alert("Bạn đã thêm sản phẩm thành công");
                 setTimeout(() => {
                     router.navigate("/product");
                 }, 2000);
