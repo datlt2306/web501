@@ -23,6 +23,7 @@ const ProductEditPage = ({ id }) => {
     useEffect(() => {
         const formAddProduct = document.querySelector("#form-edit-product");
         const errorsElement = document.querySelector("#errors");
+        if (!formAddProduct) return;
 
         formAddProduct.addEventListener("submit", function (event) {
             // chặn reload trang
@@ -50,7 +51,6 @@ const ProductEditPage = ({ id }) => {
         });
     });
 
-    if (!product) return "Product not found";
     return `
         <div class="container max-w-4xl mx-auto px-4">
             ${Header()}
@@ -70,5 +70,3 @@ const ProductEditPage = ({ id }) => {
     `;
 };
 export default ProductEditPage;
-
-

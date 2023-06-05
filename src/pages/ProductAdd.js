@@ -1,11 +1,9 @@
 import Header from "../components/Header";
-import { products as data } from "../dataFake";
-import { useEffect, useState, router } from "../lib";
+import { router, useEffect } from "../lib";
 const ProductAddPage = () => {
-    const API_URL = "https://63f5d86059c944921f67a58c.mockapi.io/products";
-
     useEffect(() => {
         const formAddProduct = document.querySelector("#form-add-product");
+        if (!formAddProduct) return;
         formAddProduct.addEventListener("submit", function (event) {
             // chặn reload trang
             event.preventDefault();
@@ -15,7 +13,7 @@ const ProductAddPage = () => {
                 price: document.querySelector("#product-price").value,
             };
 
-            fetch(API_URL, {
+            fetch(`${import.meta.env.VITE_API_URI}/products`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
