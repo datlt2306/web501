@@ -4,3 +4,17 @@ Bước 2: Sử dụng npm cài đặt vitejs và tạo project
 Bước 3: Truy cập vào thư mục we18102 vừa tạo
     cd we18102 
     code .
+
+
+
+// Chạy json-server và dev
+
+B1: npm i -g json-server concurrently
+B2: tạo file db.json ở thư mục gốc
+B3: Truy cập file package.json 
+    "scripts": {
+        "dev": "concurrently vite \"json-server --watch db.json\"",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+B4: npm run dev
