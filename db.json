@@ -1,0 +1,20 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Website Portfolio",
+            "description": "A portfolio website showcasing my projects and skills.",
+            "image": "https://example.com/portfolio-image.jpg",
+            "role": "Developer",
+            "skills": ["HTML", "CSS", "JavaScript", "MongoDB"],
+            "completionDate": "2023-05-30",
+            "startDate": "2023-03-15",
+            "client": "ABC Company",
+            "url": "https://myportfolio.com",
+            "repository": "https://github.com/myportfolio",
+            "teamMembers": ["John Doe", "Jane Smith"],
+            "testimonial": "Working with John and his team was a great experience. They delivered a fantastic portfolio website that exceeded our expectations.",
+            "featured": true
+        }
+    ]
+}
