@@ -25,6 +25,7 @@ B2: Truy cập db.json. Tạo 1 collection tên "users"
 B3: Truy cập package.json. sửa lại thành 
     "dev": "concurrently vite \"json-server-auth --watch db.json\"",
 
-
+Lưu ý: Nếu powershell chưa được cấp quyền chạy json-server thì sử dụng
+    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 // Test API 
 Cài đặt postman để test API
