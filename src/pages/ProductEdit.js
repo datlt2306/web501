@@ -39,7 +39,7 @@ const ProductEditPage = ({ id }) => {
                 errorsElement.innerHTML = errors.map((err) => `<p>${err}</p>`).join("");
                 return;
             }
-            fetch(`${API_URL}/${id}`, {
+            fetch(`${import.meta.env.VITE_API_URI}/products/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
