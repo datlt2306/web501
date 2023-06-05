@@ -18,3 +18,13 @@ B3: Truy cập file package.json
         "preview": "vite preview"
     },
 B4: npm run dev
+
+// Muốn làm việc với authenticate, 
+B1: npm i -g json-server-auth
+B2: Truy cập db.json. Tạo 1 collection tên "users"
+B3: Truy cập package.json. sửa lại thành 
+    "dev": "concurrently vite \"json-server-auth --watch db.json\"",
+
+
+// Test API 
+Cài đặt postman để test API

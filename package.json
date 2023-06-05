@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "concurrently vite \"json-server --watch db.json\"",
+        "dev": "concurrently vite \"json-server-auth --watch db.json\"",
         "build": "vite build",
         "preview": "vite preview"
     },
