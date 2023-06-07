@@ -59,8 +59,13 @@
   "users": [
     {
       "email": "admin@gmail.com",
-      "password": "$2a$10$F6LV5cIGhQBtF1EoXoNJce.I4A8zGojoDH0uEkgAWkMBVqEm2x40S",
+      "password": "$2a$10$5Sd.cxS0YuAYXEELuEdtL.MwG4j4c7f2uBR11JjsLrwBssKXcnPCq",
       "id": 1
+    },
+    {
+      "email": "member@gmail.com",
+      "password": "$2a$10$HkhNh1ljjoXsEyz1jKPwauOPyetglZDA.OcN.PXy/06rs5rjo13.i",
+      "id": 2
     }
   ]
 }

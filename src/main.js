@@ -6,12 +6,26 @@ import ProductDetail from "./pages/ProductDetail";
 import { render, router } from "./lib";
 import ProductAddPage from "./pages/ProductAdd";
 import ProductEditPage from "./pages/ProductEdit";
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
 
 const app = document.querySelector("#app");
+
+// private router
+router.on("/admin/*", () => {}, {
+    before(next) {
+        const { user } = JSON.parse(localStorage.getItem("user")) || {};
+        if (!user) return (window.location.href = "/");
+        if (user && user.id != "1") return (window.location.href = "/signin");
+        next();
+    },
+});
 
 router.on("/", () => render(HomePage, app));
 router.on("/about", () => render(AboutPage, app));
 router.on("/product", () => render(ProductPage, app));
+router.on("/signup", () => render(Signup, app));
+router.on("/signin", () => render(Signin, app));
 router.on("/product/:id", ({ data }) => render(() => ProductDetail(data), app));
 // Admin
 router.on("/admin/product/add", () => render(ProductAddPage, app));
