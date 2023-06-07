@@ -29,3 +29,25 @@ Lưu ý: Nếu powershell chưa được cấp quyền chạy json-server thì s
     Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 // Test API 
 Cài đặt postman để test API
+
+
+==============
+Lưu ý khi định nghĩa trường dữ liệu để có thể sử dụng relationship
+
+ví dụ :
+
+product: {
+    categoryId: 1
+}
+
+categories: [
+    { id: 1, name:"Category A"}
+]
+
+
+Lấy ra các sản phẩm thuộc danh mục có id là 1
+// http://localhost:3000/categories/1?_embed=products
+
+
+lấy ra thông tin danh mục có id sản phẩm là 1
+// http://localhost:3000/products/1?_expand=category

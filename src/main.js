@@ -8,6 +8,7 @@ import ProductAddPage from "./pages/ProductAdd";
 import ProductEditPage from "./pages/ProductEdit";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
+import CategoryPage from "./pages/CategoryPage";
 
 const app = document.querySelector("#app");
 
@@ -26,6 +27,7 @@ router.on("/about", () => render(AboutPage, app));
 router.on("/product", () => render(ProductPage, app));
 router.on("/signup", () => render(Signup, app));
 router.on("/signin", () => render(Signin, app));
+router.on("/category/:id", ({ data }) => render(() => CategoryPage(data), app));
 router.on("/product/:id", ({ data }) => render(() => ProductDetail(data), app));
 // Admin
 router.on("/admin/product/add", () => render(ProductAddPage, app));
