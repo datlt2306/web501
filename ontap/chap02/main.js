@@ -1,6 +1,50 @@
-import './style.css'
+/** Biến */
+// var a = 10;
+// var a = 20;
+// var b = 20;
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello vINH!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+// var c = a + b;
+// console.log(c);
+
+// let a = 10;
+// let a = 20;
+// let b = 20;
+// let c = a + b;
+// console.log(c);
+
+// const a = 10;
+// a = 20;
+// console.log(a);
+
+/**
+ * Mặc định sử dụng const để khai báo biến
+ * Nếu cần thay đổi giá trị thì sử dụng let
+ */
+
+/**
+ * Đặt tên biến:
+ *  - camelCase
+ *  - danh từ
+ *  - Nếu số nhiều thì phải có list hoặc thêm s
+ * Đặt tên hàm
+ *  - camelCase
+ *  - động từ
+ */
+
+const productList = [];
+const products = [];
+const users = [];
+const myName = "Lê Trọng Đạt";
+const myAge = 20;
+const isMarried = true;
+const hasChild = false;
+const myInfo = {
+    name: "Lee",
+    age: 20,
+};
+
+// Khai báo hàm
+function removeProduct() {}
+function setPermission() {}
+function getProduct() {}
+function addProduct() {}
