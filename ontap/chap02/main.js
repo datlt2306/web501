@@ -54,25 +54,46 @@
  * shalow copy
  */
 
-const products = [1, 2, 3, 4];
+// const products = [1, 2, 3, 4];
 
-// Spread operator - mảng
-const productsClone = [...products];
+// // Spread operator - mảng
+// const productsClone = [...products];
 
-productsClone.push(5);
+// productsClone.push(5);
 
-console.log("products", products);
-console.log("productsClone", productsClone);
+// console.log("products", products);
+// console.log("productsClone", productsClone);
 
-// Speard operator - đối tượng
+// // Speard operator - đối tượng
 
-const product = {
-    name: "Product A",
+// const product = {
+//     name: "Product A",
+// };
+// const productClone = { ...product };
+
+// productClone.price = 200;
+// productClone.address.street = "B";
+
+// console.log("product", product);
+// console.log("productClone", productClone);
+
+/**
+ * Kiểu dữ liệu: string, number, boolean, object, null, underfined
+ */
+
+const myAge = 10; // number
+const myName = "Lee"; // string
+const isMarried = true; // boolean
+const myInfo = {
+    // object
+    name: "Lee", // property
+    age: 20,
+    run: function () {
+        // method
+        console.log(this.name);
+    },
 };
-const productClone = { ...product };
 
-productClone.price = 200;
-productClone.address.street = "B";
+const myChildren = ["A", "B", "C"]; // array
 
-console.log("product", product);
-console.log("productClone", productClone);
+console.log(myInfo.run());
