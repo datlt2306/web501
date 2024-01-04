@@ -67,5 +67,28 @@ const myAddress = {
 //     },
 // };
 
-console.log(myAddress["1"]);
-console.log(myAddress.run());
+// console.log(myAddress["1"]);
+// console.log(myAddress.run());
+
+/** ========== THAM CHIẾU VÀ THAM TRỊ========= */
+// tham chiếu -> object, array trỏ đến địa chỉ ô nhớ
+// tham trị -> number, string, boolean, null, undefined
+// tài liệu: https://javascript.info/object-copy
+
+// Ví dụ 1:
+const product1 = {
+    name: "Product A",
+};
+const product2 = { ...product1 };
+product2.name = "Product B";
+console.log(product1);
+console.log(product2);
+
+// Ví dụ 2:
+const productList = [1, 2, 3, 4, 5];
+
+const productClone = [...productList];
+productClone.push(6);
+
+console.log(productList);
+console.log(productClone);
