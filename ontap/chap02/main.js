@@ -29,19 +29,29 @@
 // 2. Đặt tên danh từ
 // 3. Có ý nghĩa
 
-const myName = "Nguyen Van A";
-const product = {
-    name: "Iphone 12",
-    price: 1000,
-};
-const isMarried = true;
-const hasChild = false;
+// const myName = "Nguyen Van A";
+// const product = {
+//     name: "Iphone 12",
+//     price: 1000,
+// };
+// const isMarried = true;
+// const hasChild = false;
 
 // Đặt tên hàm
 // 1. Tiếng Anh
 // 2. Đặt tên động từ
 
-function getProductById(id) {}
-function removeProductById(id) {}
-function setUserPermission(role) {}
-function addProduct(product) {}
+// function getProductById(id) {}
+// function removeProductById(id) {}
+// function setUserPermission(role) {}
+// function addProduct(product) {}
+
+const productA = {
+    name: "Iphone 12",
+};
+// spread operator -> copy object
+const productB = { ...productA };
+
+productB.price = 200;
+console.log("productA", productA);
+console.log("productB", productB);
