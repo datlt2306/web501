@@ -46,22 +46,39 @@ const myChildren = ["A", "B", "C"]; // array
 myChildren.push("D");
 const myInfo = {
     // object
-    name: "Nguyễn Văn A",
-    age: 20,
+    name: "Nguyễn Văn A", // property
+    age: 20, // property
     isMarried: true,
     children: ["A", "B", "C"],
+    run: function () {
+        console.log("running");
+    },
 };
 
 // Tên biến : camelCase, là 1 danh từ, có ý nghĩa
 // Tên biến nếu là 1 mảng phải có số nhiều hoặc từ List
 
-const products = [];
-const productList = [];
-const users = {};
+// const products = [];
+// const productList = [];
+// const users = {};
 
-// tên hàm: là 1 động từ
+// // tên hàm: là 1 động từ
 
-function setPermission() {}
-function getPermission() {}
-function removeProductById(id) {}
-function getProductById(slug) {}
+// function setPermission() {}
+// function getPermission() {}
+// function removeProductById(id) {}
+// function getProductById(slug) {}
+
+const productA = {
+    name: "Iphone 12",
+};
+// Spread Operator: copy giá trị của 1 object
+const productB = { ...productA };
+productB.price = 200;
+console.log({ productA });
+console.log({ productB });
+
+// DOM
+// Hàm: delcaration function, arrow function, IFFE function
+// mảng và các phương thức trong mảng: push, map, filter, include, find, reduce
+// object và các phương thức trong object: keys, values, entries
