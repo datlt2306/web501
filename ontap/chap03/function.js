@@ -1,3 +1,5 @@
+// Function name
+
 const a = "10";
 const b = 20;
 function sum(a, b) {
@@ -13,6 +15,13 @@ sum(a, b); // Sử dụng
 const products = ["Áo sơ mi", "Quần jean", "Áo khoác"];
 const productElement = document.querySelector("#products");
 
+// hoisting
+if (productElement) {
+    productElement.innerHTML = showProducts(products);
+} else {
+    console.log("Không tìm thấy phần tử");
+}
+
 function showProducts(data) {
     // kiểm tra
     let result = "";
@@ -25,8 +34,18 @@ function showProducts(data) {
     return result;
 }
 
-if (productElement) {
-    productElement.innerHTML = showProducts(products);
-} else {
-    console.log("Không tìm thấy phần tử");
-}
+// function expression - const name = function(){}
+// const sum2 = function (a, b) {
+//     return a + b;
+// };
+// console.log(sum2(3, 4)); // involked function | excuted
+
+// IIFE function
+// (function (a, b) {
+//     console.log("Hello", a + b);
+// })(3, 4);
+
+// arrow function
+
+const sum2 = (a, b) => a + b;
+sum2(3, 4);
