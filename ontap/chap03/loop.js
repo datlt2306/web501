@@ -1,4 +1,4 @@
-const products = ["Sản phẩm A", "Sản phẩm B", "Sản phẩm C"];
+const products = ["A", "B", "C"];
 const productElement = document.querySelector("#products");
 
 let result = "";
@@ -19,8 +19,12 @@ let result = "";
 // }
 
 // forEach
-products.forEach((item) => {
-    result += `<li>${item}</li>`;
-});
+// products.forEach((item) => {
+//     result += `<li>${item}</li>`;
+// });
 
-productElement.innerHTML = result;
+function showProducts(products) {
+    if (!Array.isArray(products)) return false;
+    return products.map((item) => `<li>Sản phẩm ${item}</li>`).join("");
+}
+productElement.innerHTML = showProducts(products);
