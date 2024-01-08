@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="container m-auto">
+            <section class="banner">
+                <div class="grid grid-cols-3 gap-x-8" id="banner"></div>
+            </section>
+            <section class="projects">
+                <h2>My Projects</h2>
+                <div class="grid grid-cols-3 gap-8" id="projects"></div>
+            </section>
+        </div>
+
+        <script>
+            const banner = document.querySelector("#banner");
+            const projectElement = document.querySelector("#projects");
+            const info = {
+                name: "John",
+                position: "Creative Technologist",
+                description:
+                    "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+                resume: "https://www.africau.edu/images/default/sample.pdf",
+                image: "https://picsum.photos/245/245",
+            };
+
+            const projectsData = [
+                {
+                    title: "Project 1",
+                    description:
+                        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+                    image: "https://picsum.photos/245/245",
+                },
+                {
+                    title: "Project 2",
+                    description:
+                        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+                    image: "https://picsum.photos/245/245",
+                },
+                {
+                    title: "Project 3",
+                    description:
+                        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+                    image: "https://picsum.photos/245/245",
+                },
+                {
+                    title: "Project 4",
+                    description:
+                        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+                    image: "https://picsum.photos/245/245",
+                },
+                {
+                    title: "Project 5",
+                    description:
+                        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+                    image: "https://picsum.photos/245/245",
+                },
+                {
+                    title: "Project 6",
+                    description:
+                        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+                    image: "https://picsum.photos/245/245",
+                },
+            ];
+
+            banner.innerHTML = `
+                    <div class="col-span-2 bg-blue-500">
+                        <h2 class="text-5xl mb-5">Hi, I am ${info.name}, ${info.position}</h2>
+                        <p>${info.description}</p>
+                        <a href="${info.resume}" class="my-5 bg-red-500 inline-block px-8 py-5 rounded"
+                            >Download Resume</a
+                        >
+                    </div>
+                    <div class="col-span-1 bg-red-500">
+                        <img
+                            src="${info.image}"
+                            alt=""
+                            class="mx-auto rounded-full"
+                        />
+                    </div>
+            `;
+            projectElement.innerHTML = projectsData
+                .map((project) => {
+                    return `
+                    <div class="border">${project.title}</div>
+                `;
+                })
+                .join("");
+        </script>
+    </body>
+</html>
