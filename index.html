@@ -1,13 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="container mx-auto">
+            <section class="banner">
+                <div class="grid grid-cols-[7fr,5fr] gap-8 items-center" id="banner-content"></div>
+            </section>
+            <!--End .banner-->
+        </div>
+
+        <script>
+            const info = {
+                name: "Rayan Adlrdard",
+                role: "Front-end",
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.",
+                cv: "https://www.africau.edu/images/default/sample.pdf",
+                img: "https://picsum.photos/325/460",
+            };
+            const content = `
+				<div>
+					<h2 class="text-5xl font-bold">
+						I’m ${info.name}
+						<span class="text-[#FFB400]">${info.role}</span> Developer
+					</h2>
+					<p class="my-5">
+						${info.desc}
+					</p>
+					<a href="${info.cv}" class="inline-block p-5 px-4 bg-yellow-500 rounded-lg"
+						>HIRE ME</a
+					>
+				</div>
+				<div>
+					<img src="${info.img}" alt="" />
+				</div>
+			`;
+
+            const bannerContent = document.querySelector("#banner-content");
+            bannerContent.innerHTML = content;
+        </script>
+    </body>
 </html>
