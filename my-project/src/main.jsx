@@ -19,8 +19,4 @@ ReactDOM.createRoot(root).render(
     </>
 );
 
-// const myName = "Dat";
-// const text = `<h1>hello ${myName}</h1>`;
-// const root = document.querySelector("#root");
-
-// root.innerHTML = text;
+// npm create vite@latest my-react-project -- --template react
