@@ -7,12 +7,34 @@ const myInfo = {
     name: "Kien",
     age: 30,
 };
+const Menu = () => {
+    return (
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    );
+};
+const Header = () => {
+    return (
+        <header>
+            <Menu />
+        </header>
+    );
+};
+const Footer = () => {
+    return <footer>Footer</footer>;
+};
+const Main = () => {
+    return <main>Main</main>;
+};
+
+// JAVASCRIPT XML
 ReactDOM.createRoot(document.getElementById("root")).render(
     <>
-        <h1>Tên tôi là: {myName}</h1>
-        <p>Tuổi: {myAge}</p>
-        <p>Tình trạng: {isMarried ? "Đã chết" : "3D"}</p>
-        <p>Thông tin: {myInfo.name}</p>
+        <Header />
+        <Main />
+        <Footer></Footer>
     </>
 );
 // npm create vite@latest my-react-project -- --template react
