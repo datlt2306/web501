@@ -22,3 +22,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </p>
     </div>
 );
+
+// npm create vite@latest my-react-project -- --template react
