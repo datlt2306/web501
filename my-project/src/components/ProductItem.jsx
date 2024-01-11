@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 const ProductItem = (props) => {
@@ -12,5 +13,4 @@ const ProductItem = (props) => {
         </div>
     );
 };
-
 export default ProductItem;
