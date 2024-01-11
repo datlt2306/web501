@@ -1,18 +1,22 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React from "react";
+import ProductImage from "./ProductImage";
 
-const ProductItem = (props) => {
-    console.log(props); // { name: '', price: xxx}
+const ProductItem = ({ product }) => {
     return (
         <div>
             <div className="product-image">
-                <img src={props.product.img} />
+                <ProductImage img={product.img} />
             </div>
-            <h2>{props.product.name}</h2>
-            <p>{props.product.price}</p>
-            <p>{props.product.color}</p>
-            <p>{props.product.address.city}</p>
+            <h2>{product.name}</h2>
+            <p>{product.price}</p>
+            <p>{product.color}</p>
+            <p>{product.address.city}</p>
         </div>
     );
 };
 
 export default ProductItem;
+
+// destructoring -> phá hủy
