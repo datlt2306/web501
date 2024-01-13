@@ -48,13 +48,11 @@ function App() {
             <hr />
             <h2>Sản phẩm</h2>
             <div className="grid grid-cols-3 gap-8">
-                {productList.map(function (product, index) {
-                    return (
-                        <div key={index} className="border-2">
-                            <ProductItem product={product} />
-                        </div>
-                    );
-                })}
+                {productList.map((product, index) => (
+                    <div key={index} className="border-2">
+                        <ProductItem product={product} />
+                    </div>
+                ))}
             </div>
         </div>
     );
