@@ -17,8 +17,17 @@ const App = () => {
             image: "https://picsum.photos/200/500",
         }, // item
     ]);
+
+    const [color, setColor] = useState("red");
+
     return (
         <div className="max-w-6xl mx-auto">
+            <div className="w-20 h-20 border" style={{ background: color }}>
+                box
+            </div>
+            <button onClick={() => setColor("blue")}>Click</button>
+
+            <hr />
             <Header />
             <main>
                 <h2>Sản phẩm mới</h2>
