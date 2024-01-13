@@ -1,47 +1,49 @@
+import { useState } from "react";
 import Footer from "./componets/Footer";
 import Header from "./componets/Header";
 import Main from "./componets/Main";
 import ProductItem from "./componets/ProductItem";
 
-const productList = [
-    {
-        id: 1,
-        name: "Iphone 12",
-        price: 1000,
-        color: "red",
-        img: "https://picsum.photos/200/200",
-        address: {
-            city: "HCM",
-            district: "1",
-        },
-    }, // product
-    {
-        id: 2,
-        name: "Iphone 13",
-        price: 1000,
-        color: "red",
-        img: "https://picsum.photos/200/200",
-        address: {
-            city: "HCM",
-            district: "1",
-        },
-    },
-    {
-        id: 3,
-        name: "Iphone 14",
-        price: 1000,
-        color: "red",
-        img: "https://picsum.photos/200/200",
-        address: {
-            city: "HCM",
-            district: "1",
-        },
-    },
-];
-
 function App() {
+    // state
+    const [productList] = useState([
+        {
+            id: 1,
+            name: "Iphone 12",
+            price: 1000,
+            color: "red",
+            img: "https://picsum.photos/200/200",
+            address: {
+                city: "HCM",
+                district: "1",
+            },
+        }, // product
+        {
+            id: 2,
+            name: "Iphone 13",
+            price: 1000,
+            color: "red",
+            img: "https://picsum.photos/200/200",
+            address: {
+                city: "HCM",
+                district: "1",
+            },
+        },
+        {
+            id: 3,
+            name: "Iphone 14",
+            price: 1000,
+            color: "red",
+            img: "https://picsum.photos/200/200",
+            address: {
+                city: "HCM",
+                district: "1",
+            },
+        },
+    ]);
     return (
         <div className="max-w-6xl mx-auto">
+            <hr />
             <Header />
             <Main />
             <Footer />
