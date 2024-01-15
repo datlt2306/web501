@@ -1,40 +1,33 @@
 import { useState } from "react";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import ProductItem from "./components/ProductItem";
-
-const productList = [
-    { id: 1, name: "Product A", price: 200 }, // product
-    { id: 2, name: "Product B", price: 300 },
-    { id: 3, name: "Product C", price: 400 },
-];
 function App() {
     const [isLogged, setIsLogged] = useState(false);
     const [name, setName] = useState("");
 
-    const onChangeStatus = () => {
-        setIsLogged(!isLogged);
-        setName("Lê Trọng Đạt");
-    };
     return (
         <>
+            <h3>Họ và tên: {name}</h3>
             {isLogged ? (
                 <>
-                    <span>Chào mừng {name}</span>
-                    <button onClick={onChangeStatus}>Đăng xuất</button>
+                    <span>Chào mừng admin</span>
+                    <button
+                        onClick={() => {
+                            setIsLogged(!isLogged);
+                            setName("");
+                        }}
+                    >
+                        Đăng xuất
+                    </button>
                 </>
             ) : (
-                <button onClick={onChangeStatus}>Đăng nhập</button>
+                <button
+                    onClick={() => {
+                        setIsLogged(!isLogged);
+                        setName("Lê Trọng Đạt");
+                    }}
+                >
+                    Đăng nhập
+                </button>
             )}
-            {productList.map((product) => {
-                return <ProductItem product={product} key={product.id} />;
-            })}
-            <div className="container">
-                <Header />
-                <Main />
-                <Footer />
-            </div>
         </>
     );
 }
