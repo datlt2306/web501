@@ -41,8 +41,22 @@ function App() {
             },
         },
     ]);
+    const [isLogged, setIsLogged] = useState(false);
+
+    // function
+    const changeStatus = () => {
+        setIsLogged(!isLogged);
+    };
     return (
         <div className="max-w-6xl mx-auto">
+            {isLogged ? (
+                <>
+                    <span>Chào mừng bạn abc</span>
+                    <button onClick={changeStatus}>Đăng xuất</button>
+                </>
+            ) : (
+                <button onClick={changeStatus}>Đăng nhập</button>
+            )}
             <hr />
             <Header />
             <Main />
