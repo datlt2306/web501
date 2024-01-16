@@ -39,7 +39,6 @@ const App = () => {
             ) : (
                 <button onClick={changeStatus}>Đăng nhập</button>
             )}
-
             <hr />
             <Header />
             <main>
