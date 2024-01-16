@@ -42,20 +42,39 @@ function App() {
         },
     ]);
     const [isLogged, setIsLogged] = useState(false);
+    const [user, setUser] = useState({});
 
     // function
-    const changeStatus = () => {
-        setIsLogged(!isLogged);
-    };
     return (
         <div className="max-w-6xl mx-auto">
             {isLogged ? (
                 <>
-                    <span>Chào mừng bạn abc</span>
-                    <button onClick={changeStatus}>Đăng xuất</button>
+                    <span>Chào mừng bạn {user.name} </span>
+                    <button
+                        className="
+                                bg-green-500 
+                                text-white 
+                                rounded p-4"
+                        onClick={() => {
+                            setIsLogged(!isLogged);
+                            setUser({});
+                        }}
+                    >
+                        Đăng xuất
+                    </button>
                 </>
             ) : (
-                <button onClick={changeStatus}>Đăng nhập</button>
+                <button
+                    onClick={() => {
+                        setIsLogged(!isLogged);
+                        setUser({
+                            name: "Lê Trọng Đạt",
+                            email: "datlt34@fpt.edu.vn",
+                        });
+                    }}
+                >
+                    Đăng nhập
+                </button>
             )}
             <hr />
             <Header />
