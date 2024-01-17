@@ -11,7 +11,6 @@
 // button.addEventListener('click', function(){
 //     console.log('Button clicked');
 // })
-const url = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js";
 function loadScript(src, callback) {
     // Tạo thẻ script
     const script = document.createElement("script");
@@ -19,10 +18,11 @@ function loadScript(src, callback) {
     script.src = src;
     // script => <script src="xxx.js"></script>
     script.onload = function () {
-        callback(script);
+        callback(null, script);
+    };
+    script.onerror = function () {
+        callback("Lỗi rồi");
     };
     document.head.append(script);
 }
-loadScript(url, function (script) {
-    console.log("Load success", script);
-});
+loadScript("url");
