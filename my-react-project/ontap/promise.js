@@ -28,7 +28,7 @@ function loadScript(src) {
         document.head.append(script);
     });
 }
-// setTimeout - 3s
+// setTimeout - 3s - chaining
 loadScript(url)
     .then((script) => console.log(script))
     .catch((error) => console.log(error));

@@ -33,8 +33,12 @@ function loadScript(src) {
 //     .then((script) => console.log(script))
 //     .catch((error) => console.log(error));
 
-// async function thucHien() {
-//     const result = await loadScript(url);
-//     console.log(result);
-// }
-// thucHien();
+async function thucHien() {
+    try {
+        const result = await loadScript(url);
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
+thucHien();
