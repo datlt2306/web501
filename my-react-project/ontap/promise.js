@@ -16,6 +16,6 @@ function loadScript(src) {
     });
 }
 loadScript(url)
-    .then((script) => console.log(script))
+    .then((script) => script.json())
     .then((script2) => console.log(script2))
     .catch((error) => console.log(error));
