@@ -1,13 +1,23 @@
 function loadScript(src, callback) {
-    // Tạo ra 1 thẻ script
     const script = document.createElement("script");
-    // nhúng thư viện vào thuộc tính src của thẻ script
     script.src = src;
-    script.onload = () => callback();
-    // thêm thẻ script vào trong thẻ head của trang web
+    // script => <script src="thuvien.js"></script>
+    script.onload = () => callback(null, script);
+    script.onerror = () => callback("Lỗi rồi");
     document.head.append(script);
 }
-loadScript("thuvien.js", function () {
-    newFunction();
-});
-// newFunction là một hàm thuộc thuvien.js
+loadScript(
+    "https://www.loom.com/share/7be32432424248a9ec1b754a389cd737b86f34669d",
+    function (error, script) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log(script);
+            loadScript("thuhvien2.js", function (error2, script2) {
+                if (error2) {
+                } else {
+                }
+            });
+        }
+    }
+);
