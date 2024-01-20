@@ -1,9 +1,9 @@
 function loadScript(src, callback) {
     const script = document.createElement("script");
     script.src = src;
-    script.onload = () => callback();
+    script.onload = () => callback(null, script);
+    script.onerror = () => callback("Lỗi rồi");
     document.head.append(script);
 }
-
-loadScript("thuvien.js"); // the script has "function newFunction()"
-newFunction();
+// setTimeout(5000)
+loadScript("https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif");
