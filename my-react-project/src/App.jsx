@@ -1,16 +1,9 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 function App() {
     const [productsList, setProductsList] = useState([]);
+    const [product, setProduct] = useState({});
     const API_URL = "https://6110f09bc38a0900171f0ed0.mockapi.io/products";
-    const dataAddFake = {
-        name: "Sản phẩm vừa thêm",
-        img: "https://loremflickr.com/640/480/fashion",
-    };
-    const dataEditFake = {
-        name: "Sản phẩm vừa cập nhật",
-        img: "https://loremflickr.com/640/480/fashion",
-    };
-
     useEffect(() => {
         const getProducts = async () => {
             try {
@@ -25,60 +18,41 @@ function App() {
         };
         getProducts();
     }, []);
-    const addProduct = async () => {
-        //POST API - body
-        try {
-            await fetch(API_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(dataAddFake),
-            });
 
-            alert("Thêm sản phẩm thành công");
-        } catch (error) {
-            console.log(error);
-        }
+    const onHandleInput = (e) => {
+        setProduct({
+            ...product,
+            [e.target.name]: e.target.value,
+        });
     };
-    const updateProduct = async () => {
-        //PUT|PATCH API - body
-        try {
-            await fetch(`${API_URL}/26`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(dataEditFake),
-            });
 
-            alert("Cập nhật sản phẩm thành công");
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    const deleteProduct = async () => {
-        try {
-            //DELETE API/id
-            await fetch(`${API_URL}/26`, {
-                method: "DELETE",
-            });
-
-            alert("Xóa sản phẩm thành công");
-        } catch (error) {
-            console.log(error);
-        }
+    const onHandleSubmit = async (e) => {
+        e.preventDefault();
+        const { data } = await axios.post(
+            "https://6110f09bc38a0900171f0ed0.mockapi.io/products",
+            product
+        );
+        setProductsList([...productsList, data]);
     };
     return (
         <>
-            <button onClick={addProduct}>Thêm</button>
-            <button onClick={updateProduct}>Cập nhật</button>
-            <button onClick={deleteProduct}>Xóa</button>
-            {productsList ? (
-                productsList.map((product) => <div key={product.id}>{product.name}</div>)
-            ) : (
-                <div>Không có sản phẩm nào</div>
-            )}
+            {JSON.stringify(product)}
+            <h1>Thêm sản phẩm</h1>
+            <form onSubmit={onHandleSubmit}>
+                <input type="text" name="name" placeholder="Tên sản phẩm" onInput={onHandleInput} />
+                <input
+                    type="number"
+                    name="price"
+                    placeholder="Giá sản phẩm"
+                    onInput={onHandleInput}
+                />
+                <input type="text" name="img" placeholder="Ảnh sản phẩm" onInput={onHandleInput} />
+                <button>Thêm</button>
+            </form>
+            <hr />
+            {productsList.map((item, index) => {
+                return <div key={index}>{item.name}</div>;
+            })}
         </>
     );
 }
