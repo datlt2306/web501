@@ -3,7 +3,7 @@ import ProductItem from "./components/ProductItem";
 import ProductAdd from "./components/ProductAdd";
 import { Route, Routes } from "react-router-dom";
 import ProductEdit from "./components/ProductEdit";
-
+import axios from "axios";
 // React es7+... : gõ câu lệnh rafce để tạo component
 // cài đặt extension: html to jsx
 
@@ -11,36 +11,26 @@ function App() {
     const [productList, setProductList] = useState([]);
     useEffect(() => {
         const getProducts = async () => {
-            const response = await fetch("https://6110f09bc38a0900171f0ed0.mockapi.io/products");
-            const data = await response.json();
+            const { data } = await axios.get(
+                `https://6110f09bc38a0900171f0ed0.mockapi.io/products`
+            );
             setProductList(data);
         };
         getProducts();
     }, []);
     const addProduct = async (product) => {
-        const response = await fetch(`https://6110f09bc38a0900171f0ed0.mockapi.io/products`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(product),
-        });
-        const data = await response.json();
+        const { data } = await axios.post(
+            "https://6110f09bc38a0900171f0ed0.mockapi.io/products",
+            product
+        );
         // rerender
         setProductList([...productList, data]);
     };
     const editProduct = async (product) => {
-        const response = await fetch(
+        const { data } = await axios.put(
             `https://6110f09bc38a0900171f0ed0.mockapi.io/products/${product.id}`,
-            {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(product),
-            }
+            product
         );
-        const data = await response.json();
         // rerender
         console.log(data);
     };
