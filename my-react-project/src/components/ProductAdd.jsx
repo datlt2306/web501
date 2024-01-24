@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useForm } from "react-hook-form";
 
 const ProductAdd = ({ onAdd }) => {
-    const [valueInput, setValueInput] = useState({});
-    const onHandleChange = (e) => {
-        const value = e.target.value;
-        const name = e.target.name;
+    const { register, handleSubmit } = useForm();
 
-        // valueInput = { name: "Dat", price: 200}
-
-        setValueInput({
-            ...valueInput,
-            [name]: value,
-        });
-    };
-    const onHandleSubmit = async (e) => {
-        e.preventDefault();
-        onAdd(valueInput);
+    const onSubmit = (data) => {
+        onAdd(data);
     };
     return (
-        <form onSubmit={onHandleSubmit}>
-            <input type="text" name="name" onInput={onHandleChange} placeholder="Tên sản phẩm" />
-            <input type="text" name="img" onInput={onHandleChange} placeholder="Ảnh sản phẩm" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" {...register("name")} placeholder="Tên sản phẩm" />
+            <input type="text" {...register("img")} placeholder="Ảnh sản phẩm" />
             <button>Submit</button>
         </form>
     );
