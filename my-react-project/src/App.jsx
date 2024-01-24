@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import ProductAdd from "./components/ProductAdd";
 
 function App() {
     const [productList, setProductList] = useState([]);
+
     const API_URL = `https://6110f09bc38a0900171f0ed0.mockapi.io/products`;
 
     useEffect(() => {
@@ -17,16 +19,13 @@ function App() {
         getProducts();
     }, []);
 
-    function addProduct() {
+    function onHandleAdd(product) {
         fetch(API_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                name: "Sản phẩm mới thêm 5 WD18333",
-                image: "ahihi",
-            }),
+            body: JSON.stringify(product),
         }).then(() => {
             alert("Thêm sản phẩm thành công");
         });
@@ -58,14 +57,19 @@ function App() {
 
     return (
         <>
-            <button onClick={addProduct}>Thêm</button>
-            <button onClick={deleteProduct}>Xóa</button>
-            <button onClick={updateProduct}>Cập nhật</button>
-            {productList.map((product) => {
-                return <div key={product.id}>{product.name}</div>;
-            })}
+            <h2>Thêm sản phẩm</h2>
+            <ProductAdd onAdd={onHandleAdd} />
         </>
     );
 }
 
 export default App;
+
+// function display(some) {
+//     console.log(some);
+// }
+// function sum({ a, b, onAdd }) {
+//     onAdd(valueInput);
+// }
+
+// sum({ a: 5, b: 5, onAdd: display });
